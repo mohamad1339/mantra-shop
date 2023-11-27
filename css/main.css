@@ -66,7 +66,7 @@
 .search5 {
   position: absolute;
   top: 20%;
-  left: 55%;
+  left: 65%;
   background-color: #3b3a3a;
   border-radius: 5px;
   width: 200px;
@@ -331,6 +331,11 @@ li:hover a {
 }
 .li:hover > .ka {
   opacity: 1;
+}
+.gh{
+  text-decoration: none;color: black;
+  cursor: pointer;
+  line-height: 38px;
 }
 
 /*ساب منو*/
