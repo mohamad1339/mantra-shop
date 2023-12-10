@@ -39,53 +39,56 @@ image1.forEach((elem) => {
   });
 });
 /*اضافه کردن محصول*/
-let plus = document.getElementById("plus");
-let count = document.getElementById("count");
-let minus = document.getElementById("minus");
+let plus = document.querySelectorAll(".plusBtn");
+let count = document.querySelectorAll(".countBtn");
+let minus = document.querySelectorAll(".minusBtn");
 let counter = 0;
-plus.addEventListener("click", plusCounter);
+plus.forEach((elem) => {
+  elem.addEventListener("click", plusCounter);
+});
+minus.forEach((elem) => {
+  elem.addEventListener("click", minusCounter);
+});
 function plusCounter() {
   counter++;
-  count.innerHTML = counter;
+  count.forEach((elem) => {
+    elem.innerHTML = counter;
+  });
+  changePrice();
 }
 plusCounter();
-minus.addEventListener("click", minusCounter);
 function minusCounter() {
   if (counter > 1) {
     counter--;
-    count.innerHTML = counter;
-  }
-}
-/*سبدخرید*/
-let sabad = document.getElementById("sabad");
-let par = document.getElementById("par");
-let close2 = document.getElementById("close2");
-sabad.addEventListener("click", function () {
-  par.style.display = "block";
-});
-close2.addEventListener("click", function () {
-  par.style.display = "none";
-});
-let plus1 = document.getElementById("plus1");
-let count1 = document.getElementById("count1");
-let minus1 = document.getElementById("minus1");
-plus1.addEventListener("click", plusCounter1);
-function plusCounter1() {
-  counter++;
-  count1.innerHTML = counter;
-  changePrice();
-}
-count1.innerHTML = counter;
-minus1.addEventListener("click", minusCounter1);
-function minusCounter1() {
-  if (counter > 1) {
-    counter--;
-    count1.innerHTML = counter;
+    count.forEach((elem) => {
+      elem.innerHTML = counter;
+    });
     changePrice();
   }
 }
+/*سبدخرید */
+let sabad = document.getElementById("sabad");
+let par1 = document.getElementById("par1");
+let close3 = document.getElementById("close3");
+let par = document.getElementById("par");
+let close2 = document.getElementById("close2");
+sabad.addEventListener("click", () => {
+  if (window.innerWidth > 992) {
+    par.style.display = "block";
+  } else {
+    par1.style.display = "block";
+  }
+});
+close2.addEventListener("click", () => {
+  par.style.display = "none";
+});
+close3.addEventListener("click", () => {
+  par1.style.display = "none";
+});
+
 function changePrice() {
   let finalPrice = document.getElementById("totalPrice");
+  let finalPrice1 = document.getElementById("totalPrice1");
   let price = `${counter * 700000}`;
   let finalP = [];
   for (i in price) {
@@ -103,12 +106,16 @@ function changePrice() {
     finalP.pop();
   }
   finalPrice.innerHTML = finalP.reverse().join("");
+  finalPrice1.innerHTML = finalP.join("");
 }
-let zobale = document.getElementById("zobale");
-zobale.addEventListener("click", function () {
-  counter = 0;
-  plusCounter1();
+let zobale = document.querySelectorAll(".zobale");
+zobale.forEach((elem) => {
+  elem.addEventListener("click", function () {
+    counter = 0;
+    plusCounter();
+  });
 });
+
 changePrice();
 /*توضیحات بیشتر*/
 let tozihat = document.querySelectorAll(".tozihat");
@@ -198,56 +205,3 @@ search6.addEventListener("click", function () {
 clos.addEventListener("click", function () {
   search4.style.display = "none";
 });
-/* سبدخرید موبایل*/
-let par1 = document.getElementById("par1");
-let close3 = document.getElementById("close3");
-sabad.addEventListener("click", function () {
-  par1.style.display = "block";
-});
-close3.addEventListener("click", function () {
-  par1.style.display = "none";
-});
-let plus2 = document.getElementById("plus2");
-let count2 = document.getElementById("count2");
-let minus2 = document.getElementById("minus2");
-plus2.addEventListener("click", plusCounter1);
-function plusCounter1() {
-  counter++;
-  count2.innerHTML = counter;
-  changePrice();
-}
-count2.innerHTML = counter;
-minus2.addEventListener("click", minusCounter1);
-function minusCounter1() {
-  if (counter > 1) {
-    counter--;
-    count1.innerHTML = counter;
-    changePrice();
-  }
-}
-function changePrice() {
-  let finalPrice = document.getElementById("totalPrice1");
-  let price = `${counter * 700000}`;
-  let finalP = [];
-  for (i in price) {
-    if (i == 0) {
-      finalP.push(price[price.length - 1]);
-    } else {
-      price = `${Math.floor((counter * 700000) / 10 ** i)}`;
-      finalP.push(price[price.length - 1]);
-      if (i % 3 == 2) {
-        finalP.push(",");
-      }
-    }
-  }
-  if (finalP.length % 3 == 2) {
-    finalP.pop();
-  }
-  finalPrice.innerHTML = finalP.reverse().join("");
-}
-let zobale1 = document.getElementById("zobale1");
-zobale1.addEventListener("click", function () {
-  counter = 0;
-  plusCounter1();
-});
-changePrice();

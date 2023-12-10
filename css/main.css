@@ -28,7 +28,7 @@
   height: 100vh;
   position: absolute;
   background-color: #1c1c1ccd;
-  z-index: 999;
+  z-index: 1000;
   display: none;
 }
 .search2 {
@@ -60,7 +60,7 @@
   height: 100vh;
   position: fixed;
   background-color: #1c1c1ccd;
-  z-index: 999;
+  z-index: 1000;
   display: none;
 }
 .search5 {
@@ -329,11 +329,10 @@ li:hover a {
 .active {
   color: blue !important;
 }
-.li:hover > .ka {
-  opacity: 1;
-}
-.gh{
-  text-decoration: none;color: black;
+
+.gh {
+  text-decoration: none;
+  color: black;
   cursor: pointer;
   line-height: 38px;
 }
@@ -346,8 +345,12 @@ li:hover a {
   width: 200px;
   border-radius: 5px;
   opacity: 0;
-  border: 1px groove rgb(131, 130, 130);
-  margin-top: 10px;
+  height: 0;
+  overflow: hidden;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
 }
 
 .ka > p {
@@ -355,6 +358,11 @@ li:hover a {
   color: #3b3a3a;
   font-size: small;
   padding: 2px 15px;
+}
+.li:hover > .ka {
+  opacity: 1;
+  border: 1px groove rgb(131, 130, 130);
+  height: max-content;
 }
 
 .ood {
@@ -366,6 +374,12 @@ li:hover a {
   opacity: 0;
   border: 1px groove rgb(131, 130, 130);
   margin-top: 10px;
+  height: 0;
+  overflow: hidden;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
 }
 .ood > p {
   cursor: pointer;
@@ -375,6 +389,8 @@ li:hover a {
 }
 .li:hover > .ood {
   opacity: 1;
+  border: 1px groove rgb(131, 130, 130);
+  height: max-content;
 }
 
 .back {
@@ -384,8 +400,12 @@ li:hover a {
   width: 200px;
   border-radius: 5px;
   opacity: 0;
-  border: 1px groove rgb(131, 130, 130);
-  margin-top: 10px;
+  height: 0;
+  overflow: hidden;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
 }
 .back > p {
   cursor: pointer;
@@ -395,6 +415,8 @@ li:hover a {
 }
 .li:hover > .back {
   opacity: 1;
+  border: 1px groove rgb(131, 130, 130);
+  height: max-content;
 }
 .dec {
   z-index: 1;
@@ -403,8 +425,12 @@ li:hover a {
   width: 200px;
   border-radius: 5px;
   opacity: 0;
-  border: 1px groove rgb(131, 130, 130);
-  margin-top: 10px;
+  height: 0;
+  overflow: hidden;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
 }
 .dec > p {
   cursor: pointer;
@@ -414,6 +440,8 @@ li:hover a {
 }
 .li:hover > .dec {
   opacity: 1;
+  border: 1px groove rgb(131, 130, 130);
+  height: max-content;
 }
 .posh {
   z-index: 1;
@@ -422,8 +450,12 @@ li:hover a {
   width: 200px;
   border-radius: 5px;
   opacity: 0;
-  border: 1px groove rgb(131, 130, 130);
-  margin-top: 10px;
+  height: 0;
+  overflow: hidden;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
 }
 .posh > p {
   cursor: pointer;
@@ -433,6 +465,8 @@ li:hover a {
 }
 .li:hover > .posh {
   opacity: 1;
+  border: 1px groove rgb(131, 130, 130);
+  height: max-content;
 }
 
 .ziv {
@@ -443,8 +477,12 @@ li:hover a {
 
   border-radius: 5px;
   opacity: 0;
-  border: 1px groove rgb(131, 130, 130);
-  margin-top: 10px;
+  height: 0;
+  overflow: hidden;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
 }
 .ziv > p {
   cursor: pointer;
@@ -454,6 +492,8 @@ li:hover a {
 }
 .li:hover > .ziv {
   opacity: 1;
+  border: 1px groove rgb(131, 130, 130);
+  height: max-content;
 }
 
 /*آیکون منو*/
@@ -613,7 +653,7 @@ li:hover a {
   height: 30px;
   width: 70px;
 }
-#plus1 {
+.plusBtn1 {
   border-left: 1px groove rgb(49, 49, 49);
   height: 30px;
   width: 15px;
@@ -629,16 +669,23 @@ li:hover a {
   border: unset;
   background-color: white;
 }
+.edeme2{
+  text-decoration: none;  transition: all 300ms linear;
+
+color: black;}
 .edeme1 {
   padding: 8px 5px;
   border-radius: 30px;
-  background-color: #56cfe1;
-  color: white;
   transition: all 300ms linear;
+  background-color: white !important;
   cursor: pointer;
+  color: black;
 }
 .edeme1:hover {
-  background-color: #1c1c1c;
+  background-color: #56cfe1 !important;
+}
+.edeme1:hover .edeme2{
+color: white;
 }
 .sefaresh3 {
   width: 100%;
@@ -677,7 +724,7 @@ li:hover a {
 }
 .mahsol > button:hover {
   background-color: #56cfe1;
-  color: white;
+  color: white;ب
 }
 /*سبد خرید موبایل*/
 .par1 {
@@ -743,7 +790,7 @@ li:hover a {
   height: 30px;
   width: 70px;
 }
-#plus2 {
+.plus2 {
   border-left: 1px groove rgb(49, 49, 49);
   height: 30px;
   width: 15px;
